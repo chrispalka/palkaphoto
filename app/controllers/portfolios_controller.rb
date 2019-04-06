@@ -1,5 +1,6 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
+  layout 'portfolio'
 
   # GET /portfolios
   # GET /portfolios.json
@@ -10,6 +11,7 @@ class PortfoliosController < ApplicationController
   # GET /portfolios/1
   # GET /portfolios/1.json
   def show
+    @page_title = @portfolio.title
   end
 
   # GET /portfolios/new
@@ -21,6 +23,10 @@ class PortfoliosController < ApplicationController
   def edit
   end
 
+  def about
+    @page_title = "About Me!"
+  end
+
   # POST /portfolios
   # POST /portfolios.json
   def create
@@ -28,7 +34,7 @@ class PortfoliosController < ApplicationController
 
     respond_to do |format|
       if @portfolio.save
-        format.html { redirect_to @portfolio, notice: 'Portfolio was successfully created.' }       
+        format.html { redirect_to @portfolio, notice: 'Portfolio was successfully created.' }
       else
         format.html { render :new }
       end
