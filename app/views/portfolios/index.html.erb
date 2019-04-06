@@ -1,29 +1,12 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Portfolios</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<p><%= link_to 'Create New Portfolio',  new_portfolio_path %></p>
 
-  <tbody>
-    <% @portfolios.each do |portfolio| %>
-      <tr>
-        <td><%= portfolio.title %></td>
-        <td><%= portfolio.body %></td>
-        <td><%= link_to 'Show', portfolio %></td>
-        <td><%= link_to 'Edit', edit_portfolio_path(portfolio) %></td>
-        <td><%= link_to 'Delete', portfolio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @portfolios.each do |portfolio| %>
+  <p><%= portfolio.title %></p>
+  <p><%= portfolio.body %></p>
+  <%= image_tag portfolio.image unless portfolio.image.nil? %>
+  <%= link_to 'Edit', edit_portfolio_path(portfolio) %>
+  <%= link_to 'Delete', portfolio_path(portfolio), method: :delete, data: { confirm: 'Are you sure you want to delete this photo?' } %>
 
-<br>
-
-<%= link_to 'New Portfolio', new_portfolio_path %>
+<% end %>
