@@ -27,6 +27,11 @@ class PortfoliosController < ApplicationController
     @page_title = "About Me!"
   end
 
+  def contact
+    @page_title = "Contact"
+  end
+
+
   # POST /portfolios
   # POST /portfolios.json
   def create

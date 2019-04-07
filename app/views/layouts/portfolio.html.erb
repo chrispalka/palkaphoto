@@ -17,10 +17,17 @@
   <body>
     <%= render 'shared/application_nav' %>
 
-    <%= render 'shared/portfolio_masthead' %>
-
+    <%= render 'shared/portfolio_masthead' if current_page?(portfolios_path) %>
 
     <%= yield %>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        <p><%= copyright_generator %></p>
+      </div>
+    </footer>
 
   </body>
 </html>
