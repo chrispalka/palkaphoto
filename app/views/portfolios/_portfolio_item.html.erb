@@ -3,7 +3,7 @@
     <%= image_tag portfolio_item.image unless portfolio_item.image.nil? %>
     <div class="card-body">
       <p class="card-text">
-        <span><%= link_to portfolio_item.title, portfolio_path(portfolio_item) %></span>
+        <span><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item) %></span>
       </p>
       <div class="d-flex justify-content-between align-items-center">
         <div class="btn-group">
