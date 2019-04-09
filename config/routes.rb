@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'about-me', to: 'portfolios#about'
   get 'contact', to: 'portfolios#contact'
   get '/:id', to: 'portfolios#show', as: 'portfolio_show'
+  # get 'edit/:id', to: 'portfolios#edit', as: 'edit_portfolio'
 
   root to: 'portfolios#index'
 end
