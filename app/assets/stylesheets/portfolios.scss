@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "font-awesome";
 
 .jumbotron {
   padding-top: 3rem;
@@ -70,4 +71,8 @@ html, body {
 
 .auth-links a {
    color: black;
+}
+
+.social-link strong {
+  font-size: 1.3em;
 }

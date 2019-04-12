@@ -6,7 +6,7 @@ class PortfoliosController < ApplicationController
   # GET /portfolios
   # GET /portfolios.json
   def index
-    @portfolios = Portfolio.recent_posts
+    @portfolios = Portfolio.page(params[:page]).per(6).recent_posts
   end
 
   # GET /portfolios/1
