@@ -2,10 +2,11 @@
   <div class="container">
     <div class="row">
 
-      <%= paginate @portfolios %>
-
       <%= render partial: "portfolio_item", collection:  @portfolios %>
 
+      <div class="paginate-style">
+        <%= paginate @portfolios %>
+      </div>
     </div>
   </div>
 </div>
