@@ -33,3 +33,37 @@ footer {
 footer p {
   margin-bottom: .25rem;
 }
+
+// Custom Styles
+
+.login > .card {
+   width: 45rem;
+   margin: 0 auto;
+   float: none;
+}
+
+.login > .login-card {
+  width: 22rem;
+}
+
+.login {
+   padding-top: 200px;
+}
+
+.card-block {
+   color: black;
+   padding: 10px;
+   text-align: left;
+}
+
+.mastfoot {
+    bottom: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.login {
+  min-height: 100%;
+}
