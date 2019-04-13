@@ -4,8 +4,8 @@
 
       <%= render partial: "portfolio_item", collection:  @portfolios %>
 
-      <div class="paginate-style">
-        <%= paginate @portfolios %>
+      <div class="digg_pagination paginate-style">
+        <%= will_paginate @portfolios %>
       </div>
     </div>
   </div>
