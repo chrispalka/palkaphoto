@@ -3,8 +3,8 @@ class Portfolio < ApplicationRecord
   friendly_id :title, use: :slugged
 
 
-  def self.recent_posts
-  	order('created_at desc')
+  def self.by_position
+  	order('position ASC')
   end
 
 end

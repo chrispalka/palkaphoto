@@ -1,5 +1,7 @@
 @import "bootstrap";
+@import "jquery-ui";
 @import "font-awesome";
+@import 'lightbox';
 
 .jumbotron {
   padding-top: 3rem;
@@ -36,6 +38,15 @@ footer p {
 }
 
 // Custom Styles
+
+.portfolio-card-title small {
+  margin-left: 135px;
+}
+
+.portfolio-card-title {
+  margin-left: 5px;
+}
+
 
 .login > .card {
    width: 45rem;
@@ -77,8 +88,29 @@ html, body {
   font-size: 1.3em;
 }
 
-.paginate-style {
+
+.portfolio-container {
+  padding-top: 30px;
+}
+
+//* will_paginate styling
+
+.pagination {
+  display: inherit;
+  margin-bottom: 30px;
   text-align: center;
-  margin: auto;
-  margin-top: 25px;
+}
+
+.pagination a {
+  color: grey;
+}
+
+.pagination a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.current {
+  color: black;
+  font-style: normal;
 }
