@@ -4,7 +4,7 @@
       <%= will_paginate @portfolios, :previous_label => ' ', :next_label => ' ' %>
     </div>
 
-    <div class="row">
+    <div class="row <%= "sortable" if logged_in?(:site_admin) %>">
       <%= render partial: "portfolio_item", collection:  @portfolios %>
     </div>
   </div>

@@ -1,15 +1,22 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
   # layout 'portfolio'
-  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
 
   # GET /portfolios
   # GET /portfolios.json
   def index
-    @portfolios = Portfolio.paginate(:page => params[:page], :per_page => 6)
+    @portfolios = Portfolio.paginate(:page => params[:page], :per_page => 6).by_position
     # render action: :index, layout: request.xhr? == nil
   end
 
+  def sort
+    params[:order].each do |key, value|
+      Portfolio.find(value[:id]).update(position: value[:position])
+    end
+
+    render body: nil
+  end
   # GET /portfolios/1
   # GET /portfolios/1.json
   def show

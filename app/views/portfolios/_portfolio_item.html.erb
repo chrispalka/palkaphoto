@@ -1,5 +1,5 @@
 <div class="col-md-4">
-  <div class="card mb-4 shadow-sm">
+  <div class="card mb-4 shadow-sm" data-id="<%= portfolio_item.id %>">
     <a href="<%= portfolio_item.image %>" data-lightbox="image-1">
       <%= image_tag portfolio_item.thumb unless portfolio_item.thumb.nil? %>
     </a>
