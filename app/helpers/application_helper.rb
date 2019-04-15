@@ -58,3 +58,5 @@ def portfolio_img img
     image_generator(height: '350', width: '200')
   end
 end
+
+  # <%= image_tag("cover.jpg", :alt => "rss feed", style: "max-height: 100%;") %> 
