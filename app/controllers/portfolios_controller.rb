@@ -1,7 +1,7 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
   # layout 'portfolio'
-  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :sort, :about, :contact]}, site_admin: :all
 
   # GET /portfolios
   # GET /portfolios.json
@@ -88,6 +88,9 @@ class PortfoliosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def portfolio_params
-      params.require(:portfolio).permit(:title, :body)
+      params.require(:portfolio).permit(:title,
+                                        :subtitle,
+                                        :thumb
+                                        )
     end
 end

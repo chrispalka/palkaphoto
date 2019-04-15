@@ -8,7 +8,9 @@ module ApplicationHelper
     else
     	(link_to "Logout", destroy_user_session_path, method: :delete, class: style) +
       "<br>".html_safe +
-      (link_to "My Account", edit_user_registration_path, class: style)
+      (link_to "My Account", edit_user_registration_path, class: style) +
+      "<br>".html_safe +
+      (link_to "New", new_portfolio_path, class: style)
 
     end
 	end
@@ -18,14 +20,6 @@ module ApplicationHelper
     {
       url: root_path,
       title: 'Home'
-    },
-    {
-      url: about_me_path,
-      title: 'About Me'
-    },
-    {
-      url: contact_path,
-      title: 'Contact'
     }
   ]
 end
@@ -51,4 +45,16 @@ end
       # content_tag(:p, greeting, class: "source-greeting")
     end
 	end
+end
+
+def image_generator(height:, width:)
+  "http://placehold.it/#{height}x#{width}"
+end
+
+def portfolio_img img, type
+  if img.model.thumb?
+    img
+  elsif type == 'thumb'
+    image_generator(height: '350', width: '200')
+  end
 end

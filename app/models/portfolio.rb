@@ -3,6 +3,9 @@ class Portfolio < ApplicationRecord
   friendly_id :title, use: :slugged
 
 
+  mount_uploader :thumb, PortfolioUploader
+
+
   def self.by_position
   	order('position ASC')
   end

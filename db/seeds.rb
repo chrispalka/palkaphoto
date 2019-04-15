@@ -1,9 +1,8 @@
 12.times do |portfolio|
   Portfolio.create!(
     title: "My Photo #{portfolio}",
-    body: "This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body.",
-    thumb: "https://via.placeholder.com/350x200",
-    image: "https://via.placeholder.com/1500x850"
+    subtitle: "This is my photo body. This is my photo body. This is my photo body. This is my photo body.",
+    thumb: "https://via.placeholder.com/1400x800",
   )
 end
 
