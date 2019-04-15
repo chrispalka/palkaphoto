@@ -3,6 +3,15 @@
 @import "font-awesome";
 @import 'lightbox';
 
+@font-face {
+  font-family: 'Open Sans';
+  src:font-url('OpenSans-Regular.ttf')
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src:font-url('Ubuntu-Regular.ttf')
+}
 .jumbotron {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -74,6 +83,16 @@ footer p {
 
 html, body {
   height: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .login {

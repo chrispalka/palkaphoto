@@ -2,7 +2,6 @@
   Portfolio.create!(
     title: "My Photo #{portfolio}",
     subtitle: "This is my photo body. This is my photo body. This is my photo body. This is my photo body.",
-    thumb: "https://via.placeholder.com/1400x800",
   )
 end
 

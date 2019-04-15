@@ -51,10 +51,10 @@ def image_generator(height:, width:)
   "http://placehold.it/#{height}x#{width}"
 end
 
-def portfolio_img img, type
+def portfolio_img img
   if img.model.thumb?
     img
-  elsif type == 'thumb'
+  else
     image_generator(height: '350', width: '200')
   end
 end

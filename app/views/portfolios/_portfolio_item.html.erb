@@ -1,7 +1,7 @@
 <div class="col-md-4">
   <div class="card mb-4 shadow-sm" data-id="<%= portfolio_item.id %>">
     <a href="<%= portfolio_item.thumb %>" data-lightbox="image-1">
-      <%= image_tag portfolio_img(portfolio_item.thumb, 'thumb').to_s, width: '100%' %>
+      <%= image_tag portfolio_img(portfolio_item.thumb).to_s, width: '100%' %>
     </a>
 
     <span class="portfolio-card-title">
