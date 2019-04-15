@@ -11,6 +11,7 @@
 // about supported directives.
 
 //= require jquery
+//= require lib/lightbox
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require activestorage

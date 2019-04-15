@@ -1,7 +1,7 @@
 <div class="col-md-4">
   <div class="card mb-4 shadow-sm">
-    <a href="<%= portfolio_show_path(portfolio_item) %>">
-      <%= image_tag portfolio_item.image unless portfolio_item.image.nil? %>
+    <a href="<%= portfolio_item.image %>" data-lightbox="image-1">
+      <%= image_tag portfolio_item.thumb unless portfolio_item.thumb.nil? %>
     </a>
 
     <span class="portfolio-card-title">

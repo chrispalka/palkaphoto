@@ -2,7 +2,8 @@
   Portfolio.create!(
     title: "My Photo #{portfolio}",
     body: "This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body. This is my photo body.",
-    image: "https://via.placeholder.com/350x200"
+    thumb: "https://via.placeholder.com/350x200",
+    image: "https://via.placeholder.com/1500x850"
   )
 end
 
