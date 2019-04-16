@@ -13,6 +13,9 @@
   src:font-url('Ubuntu-Regular.ttf')
 }
 .jumbotron {
+  background-image:url('cover.JPG');
+  background-repeat: no-repeat;
+  background-size: cover;
   padding-top: 3rem;
   padding-bottom: 3rem;
   margin-bottom: 0;
@@ -25,12 +28,13 @@
   }
 }
 
-.jumbotron p:last-child {
-  margin-bottom: 0;
+.jumbotron-text {
+  color: white;
 }
 
 .jumbotron-heading {
   font-weight: 300;
+  color: white;
 }
 
 .jumbotron .container {
@@ -47,8 +51,6 @@ footer p {
 }
 
 // Custom Styles
-
-
 
 .portfolio-card-title small {
   margin-left: 105px;
