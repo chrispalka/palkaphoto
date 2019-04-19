@@ -17,8 +17,10 @@
   <body>
     <%= render 'shared/application_nav' %>
 
+    <% if current_page?(root_path) %>
     <%= render 'shared/portfolio_masthead' %>
-
+    <% end %>
+    
     <%= yield %>
 
     <%= render 'shared/footer' %>

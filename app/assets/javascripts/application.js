@@ -20,3 +20,5 @@
 //= require turbolinks
 //= require_tree .
 //= require lib/pagination
+//= require lib/typed
+//= require typed-implementation

@@ -13,7 +13,7 @@
   src:font-url('Ubuntu-Regular.ttf')
 }
 .jumbotron {
-  background-image:url('cover.JPG');
+  // background-image:url('cover.JPG');
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 3rem;
@@ -29,12 +29,12 @@
 }
 
 .jumbotron-text {
-  color: white;
+  color: black;
 }
 
 .jumbotron-heading {
   font-weight: 300;
-  color: white;
+  color: black;
 }
 
 .jumbotron .container {
