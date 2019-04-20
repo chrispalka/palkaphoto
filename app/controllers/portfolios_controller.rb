@@ -6,8 +6,18 @@ class PortfoliosController < ApplicationController
   # GET /portfolios
   # GET /portfolios.json
   def index
-    @portfolios = Portfolio.paginate(:page => params[:page], :per_page => 6).by_position
+    @portfolios = Portfolio.all
+    @pagination_options = {:per_page => 6, :current_page => 0,
+                           :url => '/portfolios/get_photos',
+                           :total => 3, :template => 'templates/photos'}
     # render action: :index, layout: request.xhr? == nil
+  end
+
+  def get_photos
+    photos = Portfolio.all
+    respond_to do |format|
+      format.json {render json: photos}
+    end
   end
 
   def sort

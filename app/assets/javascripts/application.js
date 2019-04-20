@@ -22,3 +22,6 @@
 //= require lib/pagination
 //= require lib/typed
 //= require typed-implementation
+
+//= require pagination_ajax_plugin
+//= require pagination_ajax
