@@ -7,9 +7,12 @@ class PortfoliosController < ApplicationController
   # GET /portfolios.json
   def index
     @portfolios = Portfolio.all
-    @pagination_options = {:per_page => 6, :current_page => 0,
+    @pagination_options = {
                            :url => '/portfolios/get_photos',
-                           :total => 3, :template => 'templates/photos'}
+                           :template => 'templates/photos',
+                           :per_page => 6,
+                           :total => 18,
+                          }
     # render action: :index, layout: request.xhr? == nil
   end
 
@@ -100,7 +103,8 @@ class PortfoliosController < ApplicationController
     def portfolio_params
       params.require(:portfolio).permit(:title,
                                         :subtitle,
-                                        :thumb
+                                        :thumb,
+                                        :id,
                                         )
     end
 end

@@ -18,6 +18,7 @@
 //= require activestorage
 //= require html.sortable
 //= require turbolinks
+//= require_templates/photos
 //= require_tree .
 //= require lib/pagination
 //= require lib/typed

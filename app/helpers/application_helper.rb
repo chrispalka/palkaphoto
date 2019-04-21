@@ -58,3 +58,12 @@ def portfolio_img img
     image_generator(height: '350', width: '200')
   end
 end
+
+def pagination_options
+  @pagination_options = {
+                        :per_page => 6,
+                        :current_page => 0,
+                        :url => '/portfolios/get_photos',
+                        :total => 3, :template => 'templates/photos'}
+
+end
