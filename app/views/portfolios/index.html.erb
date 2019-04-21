@@ -1,11 +1,13 @@
 <div class="album py-5 bg-light">
   <div class="container">
-    <div class="pagination">
-      <%= will_paginate @portfolios, :previous_label => ' ', :next_label => ' ' %>
-    </div>
+    <div id="photos_container">
+      <div class="pagination">
+        <%= will_paginate @portfolios, :previous_label => ' ', :next_label => ' ' %>
 
-    <div class="row <%= "sortable" if logged_in?(:site_admin) %>">
-      <%= render partial: "portfolio_item", collection:  @portfolios %>
+        <div class="row <%= "sortable" if logged_in?(:site_admin) %>">
+          <%= render partial: "portfolio_item", collection:  @portfolios %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -17,6 +17,7 @@
 //= require bootstrap-sprockets
 //= require activestorage
 //= require html.sortable
+//= require ajax_pagination
 //= require turbolinks
 //= require_tree .
 //= require lib/pagination

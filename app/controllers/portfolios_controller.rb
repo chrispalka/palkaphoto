@@ -7,14 +7,13 @@ class PortfoliosController < ApplicationController
   # GET /portfolios.json
   def index
     @portfolios = Portfolio.paginate(:page => params[:page], :per_page => 6).by_position
-    # render action: :index, layout: request.xhr? == nil
+    render action: :index, layout: request.xhr? == nil
   end
 
   def sort
     params[:order].each do |key, value|
       Portfolio.find(value[:id]).update(position: value[:position])
     end
-
     render body: nil
   end
   # GET /portfolios/1
