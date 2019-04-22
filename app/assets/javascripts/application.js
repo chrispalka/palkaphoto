@@ -12,7 +12,7 @@
 
 //= require jquery
 //= require lib/lightbox
-//= require jquery_ujs
+//= require rails-ujs
 //= require jquery-ui
 //= require bootstrap-sprockets
 //= require activestorage

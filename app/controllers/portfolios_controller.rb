@@ -6,7 +6,7 @@ class PortfoliosController < ApplicationController
   # GET /portfolios
   # GET /portfolios.json
   def index
-    @portfolios = Portfolio.paginate(:page => params[:page], :per_page => 6).by_position
+    @portfolios = Portfolio.page(params[:page] || 1).per(6).by_position
     render action: :index, layout: request.xhr? == nil
   end
 
