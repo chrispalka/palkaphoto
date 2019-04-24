@@ -3,7 +3,7 @@ ready = ->
     strings: [
       "Below is a collection of my finest photography moments, ^500 just for you!"
     ]
-    typeSpeed: 40
+    typeSpeed: 50
   return
 
 

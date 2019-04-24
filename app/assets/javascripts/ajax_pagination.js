@@ -1,4 +1,4 @@
-window.addEventListener("load", function() {
+$(window).bind("load", function() {
   $(document.body).off('click', 'nav.pagination a');
   $(document.body).on('click', 'nav.pagination a', function(e) {
     e.preventDefault();
