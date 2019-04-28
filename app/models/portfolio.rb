@@ -3,7 +3,7 @@ class Portfolio < ApplicationRecord
   friendly_id :title, use: :slugged
 
 
-  mount_uploader :thumb, PortfolioUploader
+  mount_uploader :image, PortfolioUploader
 
 
   def self.by_position

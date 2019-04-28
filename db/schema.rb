@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_15_192156) do
+ActiveRecord::Schema.define(version: 2019_04_28_210949) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,9 +31,9 @@ ActiveRecord::Schema.define(version: 2019_04_15_192156) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
-    t.text "thumb"
     t.integer "position"
     t.text "subtitle"
+    t.text "image"
     t.index ["slug"], name: "index_portfolios_on_slug", unique: true
   end
 
