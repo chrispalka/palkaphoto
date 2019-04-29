@@ -90,6 +90,7 @@ class PortfoliosController < ApplicationController
       params.require(:portfolio).permit(:title,
                                         :subtitle,
                                         :image,
+                                        :quality,
                                         )
     end
 end
