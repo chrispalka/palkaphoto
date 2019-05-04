@@ -19,7 +19,7 @@ class PortfolioUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process resize_to_fit: [350, 200]
+    process resize_to_fill: [350, 232]
     process :quality => 100
   end
 

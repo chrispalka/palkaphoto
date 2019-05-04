@@ -55,6 +55,6 @@ def portfolio_img img
   if img.model.image?
     img
   else
-    image_generator(height: '350', width: '200')
+    image_generator(height: '350', width: '232')
   end
 end
