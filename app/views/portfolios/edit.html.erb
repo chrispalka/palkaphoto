@@ -1,6 +1,7 @@
-<h1>Editing Portfolio</h1>
+<div class="container portfolio-container">
 
-<%= render 'form', portfolio: @portfolio %>
+  <%= link_to 'Back', root_path %>
 
-<%= link_to 'Show', portfolio_show_path %> |
-<%= link_to 'Back', root_path %>
+  <%= render 'form', portfolio: @portfolio %>
+
+</div>
