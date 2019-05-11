@@ -21,10 +21,17 @@
   margin-bottom: 0;
   background-color: #fff;
 }
+
 @media (min-width: 768px) {
   .jumbotron {
     padding-top: 6rem;
     padding-bottom: 6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .width-style {
+    padding-left: 0px;
   }
 }
 
@@ -119,7 +126,6 @@ h6, .h6 {
 .social-link a:hover {
   text-decoration: none;
 }
-
 
 .portfolio-container {
   padding-top: 30px;
