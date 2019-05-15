@@ -1,7 +1,7 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
   # layout 'portfolio'
-  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :sort, :about, :contact]}, site_admin: :all
+  access all: [:show, :index, :about], user: {except: [:destroy, :new, :create, :update, :edit, :sort, :about, :contact]}, site_admin: :all
 
   # GET /portfolios
   # GET /portfolios.json
