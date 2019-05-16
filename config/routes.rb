@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
 
   get 'new', to: 'portfolios#new'
-  get 'about-me', to: 'portfolios#about'
+  get 'palkafoodie', to: 'portfolios#palkafoodie'
   get 'contact', to: 'portfolios#contact'
   get '/:id', to: 'portfolios#show', as: 'portfolio_show'
   get '/:id/edit', to: 'portfolios#edit', as: 'edit_portfolio'

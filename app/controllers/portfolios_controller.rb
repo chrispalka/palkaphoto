@@ -31,8 +31,8 @@ class PortfoliosController < ApplicationController
   def edit
   end
 
-  def about
-    @page_title = "About Me!"
+  def palkafoodie
+    @page_title = "Palkafoodie"
   end
 
   def contact
