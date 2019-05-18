@@ -10,7 +10,7 @@ module ApplicationHelper
       "<br>".html_safe +
       (link_to "My Account", edit_user_registration_path, class: style) +
       "<br>".html_safe +
-      (link_to "New", new_portfolio_path, class: style)
+      (link_to "New", new_path, class: style)
 
     end
 	end

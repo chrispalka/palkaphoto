@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
-
+  layout "blog"
   # GET /blogs
   def index
     @blogs = Blog.all
@@ -9,6 +9,7 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1
   def show
+    @blog = Blog.friendly.find(params[:id])
   end
 
   # GET /blogs/new
@@ -34,7 +35,7 @@ class BlogsController < ApplicationController
   # PATCH/PUT /blogs/1
   def update
     if @blog.update(blog_params)
-      redirect_to @blog, notice: 'Blog was successfully updated.'
+      redirect_to blog_show_path(@blog), notice: 'Blog was successfully updated.'
     else
       render :edit
     end
@@ -49,7 +50,7 @@ class BlogsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
-      @blog = Blog.find(params[:id])
+      @blog = Blog.friendly.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
