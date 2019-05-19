@@ -181,6 +181,9 @@ header.masthead {
 }
 
 header.masthead .overlay {
+  background-image:url('foodbanner.jpg');
+  background-repeat: repeat;
+  background-position: center;
   position: absolute;
   top: 0;
   left: 0;
