@@ -23,6 +23,9 @@
           <ul class="list-unstyled">
             <%= nav_helper 'text-white', 'li' %>
             <li><%= login_helper 'text-white', 'Portfolio' %></li>
+            <% if logged_in?(:site_admin) %>
+            <li><%= link_to "New", new_path, class: 'text-white' %></li>
+            <% end %>
           </ul>
         </div>
       </div>

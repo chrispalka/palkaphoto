@@ -1,14 +1,19 @@
-<p id="notice"><%= notice %></p>
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <h2 class="section-heading"><%= @blog.title %></h2>
+          <p>
+            <%= @blog.body %>
+          </p>
+      </div>
+    </div>
+  </div>
+</article>
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</p>
+<hr>
 
-<p>
-  <strong>Body:</strong>
-  <%= @blog.body %>
-</p>
-
+<% if logged_in?(:site_admin) %>
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
+<% end %>
 <%= link_to 'Back', palkafoodie_path %>

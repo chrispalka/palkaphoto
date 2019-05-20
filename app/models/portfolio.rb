@@ -5,6 +5,9 @@ class Portfolio < ApplicationRecord
 
   mount_uploader :image, PortfolioUploader
 
+  validates_presence_of :title, :subtitle
+
+
 
   def self.by_position
   	order('position ASC')

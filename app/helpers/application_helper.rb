@@ -10,8 +10,7 @@ module ApplicationHelper
       	(link_to "Logout", destroy_user_session_path, method: :delete, class: style) +
         "<br>".html_safe +
         (link_to "My Account", edit_user_registration_path, class: style) +
-        "<br>".html_safe +
-        (link_to "New", new_path, class: style)
+        "<br>".html_safe
       end
     else
       if current_user.is_a?(GuestUser)
@@ -20,7 +19,6 @@ module ApplicationHelper
       else
       	(link_to "Logout", destroy_user_session_path, method: :delete, class: style)
         (link_to "My Account", edit_user_registration_path, class: style)
-        (link_to "New", palkafoodie_new_path, class: style)
       end
     end
   end

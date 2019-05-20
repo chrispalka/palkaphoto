@@ -10,7 +10,16 @@
         <li class="nav-item">
           <%= link_to 'Home', palkafoodie_path, style: 'nav-link' %>
         </li>
-        <li class="nav-item"><%= login_helper 'nav-link', 'Palkafoodie' %></li>
+        <% if current_user.is_a?(GuestUser) %>
+          <li class="nav-item"><%= link_to "Register", new_user_registration_path %></li>
+          <li class="nav-item"><%= link_to "Login", new_user_session_path %></li>
+        <% else %>
+          <li class="nav-item"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          <li class="nav-item"><%= link_to "My Account", edit_user_registration_path %></li>
+        <% end %>
+        <% if logged_in?(:site_admin) %>
+          <li class="nav-item"><%= link_to "New", palkafoodie_new_path %></li>
+        <% end %>
       </ul>
     </div>
   </div>
