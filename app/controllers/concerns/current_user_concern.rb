@@ -5,7 +5,7 @@ module CurrentUserConcern
 		before_action :store_current_location, :unless => :devise_controller?
 	end
 
- 	def current_user 
+ 	def current_user
  		super || guest_user
  	end
 
