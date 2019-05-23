@@ -1,19 +1,15 @@
-<div class="col-sm-3 offset-sm-9 blog-sidebar">
+<% unless current_page?(palkafoodie_new_path) %>
+<div class="col-sm-3 offset-sm-1 blog-sidebar">
   <div class="sidebar-module sidebar-module-inset">
-    <h4>About</h4>
-    <p>Filling in the about nav column.</p>
-  </div>
-
-  <div class="sidebar-module">
-    <h5>Topics Quick Look</h5>
-
-  </div>
-
-  <div class="sidebar-module">
-    <h4>Elsewhere</h4>
+    <h3>Categories</h3>
+    <p>Category 1</p>
+    <p>Category 2</p>
+    <p>Category 3</p>
     <ol class="list-unstyled social-links">
       <li><a href="https://github.com/cpalka87"><%= fa_icon "github" %></a></li>
       <li><a href="https://www.instagram.com/palkaphoto/"><%= fa_icon "instagram" %></a></li>
     </ol>
   </div>
 </div>
+
+<% end %>
