@@ -1,4 +1,6 @@
 class Blog < ApplicationRecord
+  belongs_to :category
+
   extend FriendlyId
   friendly_id :title, use: :slugged
 
