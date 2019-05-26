@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  resources :categories, only: [:index]
   resources :blogs, except: [:index, :new, :edit, :show]
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   resources :portfolios, except: [:edit, :index, :show, :new, :show] do
     put :sort, on: :collection
   end
 
+  get 'category/:id', to: 'categories#show', as: 'category_show'
   get 'palkafoodie/new', to: 'blogs#new'
   get 'palkafoodie', to: 'blogs#index'
   get 'palkaphoto/:id/edit', to: 'blogs#edit', as: 'edit_blog'

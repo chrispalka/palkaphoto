@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_sidebar_categories, except: [:create, :update, :destroy]
   access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
   layout "blog"
   # GET /blogs
@@ -10,6 +11,7 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   def show
     @blog = Blog.friendly.find(params[:id])
+    @seo_keywords = @blog.body
   end
 
   # GET /blogs/new
@@ -56,5 +58,9 @@ class BlogsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def blog_params
       params.require(:blog).permit(:title, :body)
+    end
+
+    def set_sidebar_categories
+      @side_bar_categories = Category.with_blogs
     end
 end
