@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'category/:id', to: 'categories#show', as: 'category_show'
   get 'palkafoodie/new', to: 'blogs#new'
   get 'palkafoodie', to: 'blogs#index'
-  get 'palkaphoto/:id/edit', to: 'blogs#edit', as: 'edit_blog'
+  get 'palkafoodie/:id/edit', to: 'blogs#edit', as: 'edit_blog'
   get 'palkafoodie/:id', to: 'blogs#show', as: 'blog_show'
   get 'new', to: 'portfolios#new'
   get 'about-me', to: 'portfolios#about'
