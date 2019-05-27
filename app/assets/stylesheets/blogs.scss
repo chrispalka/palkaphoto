@@ -369,13 +369,12 @@ header.masthead .post-heading .meta a {
   color: #0085A1;
 }
 
-.post-preview > a > .post-title {
+.post-preview > .post-title {
   font-size: 30px;
-  margin-top: 30px;
   margin-bottom: 10px;
 }
 
-.post-preview > a > .post-subtitle {
+.post-preview > .post-subtitle {
   font-weight: 300;
   margin: 0 0 10px;
 }
@@ -512,6 +511,11 @@ footer p {
   padding-top: 30px;
 }
 
+.category-show h1 {
+  padding-bottom: 30px;
+  text-align: left;
+}
+
 //** Blog Sidebar **/
 
 /* Sidebar modules for boxing content */
@@ -521,11 +525,17 @@ footer p {
   /*margin: 0 -1rem 1rem;*/
 }
 
+.sidebar-module a {
+  text-decoration: none;
+
+  /*margin: 0 -1rem 1rem;*/
+}
+
 .social-links li {
  font-size: 2.5em;
 }
 
-.topic-list {
+.category-list {
   margin-bottom: 0;
 }
 
@@ -548,4 +558,14 @@ footer p {
 
 .blog-index {
   margin-top: 60px;
+}
+
+/**custom styles **/
+
+.subheading {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.1;
+  display: block;
+  margin: 10px 0 0;
 }
