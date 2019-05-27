@@ -10,7 +10,6 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1
   def show
-    @blog = Blog.friendly.find(params[:id])
     @seo_keywords = @blog.body
   end
 
