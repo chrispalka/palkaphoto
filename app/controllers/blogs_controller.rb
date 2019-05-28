@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   include WithBlogsConcern
-  before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
   access all: [:index, :show], site_admin: :all
   layout "blog"
   # GET /blogs
@@ -45,7 +45,16 @@ class BlogsController < ApplicationController
   # DELETE /blogs/1
   def destroy
     @blog.destroy
-    redirect_to blogs_url, notice: 'Blog was successfully destroyed.'
+    redirect_to palkafoodie_path, notice: 'Blog was successfully destroyed.'
+  end
+
+  def toggle_status
+    if @blog.draft?
+      @blog.published!
+    elsif @blog.published?
+      @blog.draft!
+    end
+      redirect_to blog_show_path(@blog), notice: 'Post status has been successfully updated'
   end
 
   private
