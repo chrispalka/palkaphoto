@@ -2,6 +2,7 @@
 @import "jquery-ui";
 @import "font-awesome";
 @import 'lightbox';
+@import "gritter";
 
 @font-face {
   font-family: 'Open Sans';
@@ -116,6 +117,7 @@ h6, .h6 {
 
 .social-link strong {
   font-size: 1.3em;
+  font-weight: 900;
 }
 
 .social-link a {

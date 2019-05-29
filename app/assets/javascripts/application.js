@@ -18,6 +18,8 @@
 //= require activestorage
 //= require html.sortable
 //= require ajax_pagination
+//= require gritter
+//= require cable
 //= require turbolinks
 //= require_tree .
 //= require lib/pagination

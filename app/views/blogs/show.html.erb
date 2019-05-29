@@ -1,0 +1,21 @@
+<div class="col-sm-8 blog-main">
+  <% if logged_in?(:site_admin) %>
+    <%= render partial: 'blogs/admin_actions', locals: { blog: @blog } %>
+  <% end %>
+  <h2 class="section-heading"><%= @blog.title %></h2>
+  <h3 class="subheading"><%= @blog.subtitle %></h3>
+    <p>
+      <%= image_tag blog_img(@blog.blog_image) %>
+    </p>
+    <p>
+      <%= @blog.body %>
+    </p>
+
+    <%= render 'comments/comment_form' %>
+
+    <%= render @blog.comments %>
+
+    <div id="comments" data-blog-id="<%= @blog.id %>">
+    <%= render @blog.comments %>
+  </div>
+</div>

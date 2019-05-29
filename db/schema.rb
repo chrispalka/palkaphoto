@@ -10,10 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_28_210949) do
+ActiveRecord::Schema.define(version: 2019_05_29_220939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "blogs", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "slug"
+    t.bigint "category_id"
+    t.string "subtitle"
+    t.integer "status", default: 0
+    t.text "blog_image"
+    t.index ["category_id"], name: "index_blogs_on_category_id"
+    t.index ["slug"], name: "index_blogs_on_slug", unique: true
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id"
+    t.bigint "blog_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["blog_id"], name: "index_comments_on_blog_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -51,4 +81,7 @@ ActiveRecord::Schema.define(version: 2019_04_28_210949) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "blogs", "categories"
+  add_foreign_key "comments", "blogs"
+  add_foreign_key "comments", "users"
 end

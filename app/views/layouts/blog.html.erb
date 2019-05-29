@@ -11,7 +11,7 @@
         gtag('config', 'UA-140022813-1');
       </script>
 
-    <title><%= @page_title %></title>
+    <title><%= @page_title = "PalkaFoodie" %></title>
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -20,20 +20,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="keywords" content="<%= @seo_keywords %>"/>
 
-    <%= stylesheet_link_tag    'portfolios', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= render 'shared/application_nav' %>
 
-    <% if current_page?(root_path) %>
-    <%= render 'shared/portfolio_masthead' %>
-    <% end %>
+    <%= render 'shared/blog_nav' %>
+
+    <%= render 'shared/blog_masthead' %>
+
+    <div class="container">
+      <div class="row">
+        <%= yield %>
+        <%= render partial: 'shared/blog_sidebar' %>
+      </div>
+    </div>
 
     <%= render 'shared/alerts' %>
-
-    <%= yield %>
 
     <%= render 'shared/footer' %>
 
