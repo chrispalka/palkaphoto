@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_28_070952) do
+ActiveRecord::Schema.define(version: 2019_05_29_220939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_070952) do
     t.bigint "category_id"
     t.string "subtitle"
     t.integer "status", default: 0
+    t.text "blog_image"
     t.index ["category_id"], name: "index_blogs_on_category_id"
     t.index ["slug"], name: "index_blogs_on_slug", unique: true
   end
@@ -32,6 +33,16 @@ ActiveRecord::Schema.define(version: 2019_05_28_070952) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id"
+    t.bigint "blog_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["blog_id"], name: "index_comments_on_blog_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -71,4 +82,6 @@ ActiveRecord::Schema.define(version: 2019_05_28_070952) do
   end
 
   add_foreign_key "blogs", "categories"
+  add_foreign_key "comments", "blogs"
+  add_foreign_key "comments", "users"
 end

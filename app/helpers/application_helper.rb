@@ -66,3 +66,11 @@ def portfolio_img img
     image_generator(height: '350', width: '232')
   end
 end
+
+def blog_img img
+  if img.model.blog_image?
+    img
+  else
+    image_generator(height: '500', width: '350')
+  end
+end

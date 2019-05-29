@@ -10,6 +10,8 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1
   def show
+    @blog = Blog.includes(:comments).friendly.find(params[:id])
+    @comment = Comment.new
     @seo_keywords = @blog.body
   end
 
@@ -65,6 +67,6 @@ class BlogsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def blog_params
-      params.require(:blog).permit(:title, :body, :subtitle, :category_id, :status)
+      params.require(:blog).permit(:title, :body, :subtitle, :category_id, :status, :blog_image)
     end
 end
