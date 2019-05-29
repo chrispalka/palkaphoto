@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :comments
   resources :categories, only: [:index]
 
   resources :blogs, except: [:index, :new, :edit, :show] do
@@ -23,6 +22,8 @@ Rails.application.routes.draw do
   get 'contact', to: 'portfolios#contact'
   get '/:id', to: 'portfolios#show', as: 'portfolio_show'
   get '/:id/edit', to: 'portfolios#edit', as: 'edit_portfolio'
+
+  mount ActionCable.server => '/cable'
 
   root to: 'portfolios#index'
 end
