@@ -1,6 +1,7 @@
-
-
 <div class="col-sm-8 blog-main">
+  <% if logged_in?(:site_admin) %>
+    <%= render partial: 'blogs/admin_actions', locals: { blog: @blog } %>
+  <% end %>
   <h2 class="section-heading"><%= @blog.title %></h2>
   <h3 class="subheading"><%= @blog.subtitle %></h3>
     <p><%= @blog.category.title if logged_in?(:site_admin) %></p>
@@ -10,7 +11,4 @@
     <p>
       <%= @blog.status if logged_in?(:site_admin) %>
     </p>
-    <%= link_to fa_icon('file-text'), toggle_status_blog_path(@blog), style: blog_status_color(@blog) if logged_in?(:site_admin) %>
-    <%= link_to fa_icon('pencil-square-o'), edit_blog_path(@blog) if logged_in?(:site_admin) %>
-    <%= link_to fa_icon('trash'), @blog, method: :delete, data: { confirm: 'Are you sure you want to delete this post' } if logged_in?(:site_admin) %>
 </div>

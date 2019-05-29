@@ -54,7 +54,7 @@ class BlogsController < ApplicationController
     elsif @blog.published?
       @blog.draft!
     end
-      redirect_to blog_show_path(@blog), notice: 'Post status has been successfully updated'
+      redirect_to palkafoodie_path, notice: 'Post status has been successfully updated'
   end
 
   private
@@ -65,6 +65,6 @@ class BlogsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def blog_params
-      params.require(:blog).permit(:title, :body, :subtitle, :category_id)
+      params.require(:blog).permit(:title, :body, :subtitle, :category_id, :status)
     end
 end
