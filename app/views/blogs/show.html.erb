@@ -4,7 +4,6 @@
   <% end %>
   <h2 class="section-heading"><%= @blog.title %></h2>
   <h3 class="subheading"><%= @blog.subtitle %></h3>
-    <p><%= @blog.category.title if logged_in?(:site_admin) %></p>
     <p>
       <%= image_tag blog_img(@blog.blog_image) %>
     </p>
