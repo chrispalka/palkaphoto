@@ -5,7 +5,7 @@
   <h2 class="section-heading"><%= @blog.title %></h2>
   <h3 class="subheading"><%= @blog.subtitle %></h3>
     <p>
-      <%= image_tag blog_img(@blog.blog_image) %>
+      <%= image_tag blog_img(@blog.blog_image).to_s, width: '100%' %>
     </p>
     <p>
       <%= @blog.body %>

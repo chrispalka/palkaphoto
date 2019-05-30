@@ -52,25 +52,26 @@ end
 			greeting = "Thanks for visiting me from #{session[:source]}"
       # content_tag(:p, greeting, class: "source-greeting")
     end
-	end
-end
-
-def image_generator(height:, width:)
-  "http://placehold.it/#{height}x#{width}"
-end
-
-def portfolio_img img
-  if img.model.image?
-    img
-  else
-    image_generator(height: '350', width: '232')
   end
-end
 
-def blog_img img
-  if img.model.blog_image?
-    img
-  else
-    image_generator(height: '500', width: '350')
+  def image_generator(height:, width:)
+    "http://placehold.it/#{height}x#{width}"
   end
+
+  def portfolio_img img
+    if img.model.image?
+      img
+    else
+      image_generator(height: '350', width: '232')
+    end
+  end
+
+  def blog_img img
+    if img.model.blog_image?
+      img
+    else
+      image_generator(height: '500', width: '350')
+    end
+  end
+
 end
