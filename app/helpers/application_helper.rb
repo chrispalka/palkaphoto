@@ -26,6 +26,10 @@ module ApplicationHelper
   def nav_items
   [
     {
+      url: palkafoodie_path,
+      title: 'PalkaFoodie'
+    },
+    {
       url: root_path,
       title: 'Home'
     }
