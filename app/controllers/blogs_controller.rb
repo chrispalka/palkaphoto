@@ -10,14 +10,14 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1
   def show
-    @blog = Blog.includes(:comments).friendly.find(params[:id])
-    @comment = Comment.new
-    @seo_keywords = @blog.body
-  end
-
-  # GET /blogs/new
-  def new
-    @blog = Blog.new
+    if logged_in?(:site_admin) || @blog.published?
+      @blog = Blog.includes(:comments).friendly.find(params[:id])
+      @comment = Comment.new
+      @page_title = @blog.title
+      @seo_keywords = @blog.body
+    else
+      redirect_to palkafoodie_path, notice: "You are not authorized to access this page"
+    end
   end
 
   # GET /blogs/1/edit
