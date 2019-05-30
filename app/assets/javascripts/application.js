@@ -14,7 +14,6 @@
 //= require lib/lightbox
 //= require rails-ujs
 //= require jquery-ui
-//= require bootstrap-sprockets
 //= require activestorage
 //= require html.sortable
 //= require ajax_pagination
@@ -22,6 +21,7 @@
 //= require cable
 //= require turbolinks
 //= require_tree .
+//= require bootstrap-sprockets
 //= require lib/pagination
 //= require lib/typed
 //= require typed-implementation
