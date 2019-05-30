@@ -5,7 +5,11 @@ class BlogsController < ApplicationController
   layout "blog"
   # GET /blogs
   def index
-    @blogs = Blog.all.recent_blogs
+    if logged_in?(:site_admin)
+      @blogs = Blog.all.recent_blogs
+    else
+      @blogs = Blog.published.recent_blogs
+    end
   end
 
   # GET /blogs/1
